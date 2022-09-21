@@ -345,4 +345,12 @@ litters_reader
     ## # … with 39 more rows, and abbreviated variable names ¹​`GD18 weight`,
     ## #   ²​`GD of Birth`, ³​`Pups born alive`, ⁴​`Pups dead @ birth`, ⁵​`Pups survive`
 
-read_csv is bettter than read.csv
+read_csv is better than read.csv
+
+## Exporting data
+
+Export the mlb sub-table.
+
+``` r
+write_csv(mlb_df, "./data/mlb_subtable.csv")
+```
