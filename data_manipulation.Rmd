@@ -22,10 +22,12 @@ Choose some columns and not others.
 select(litters_df, group, litter_number)
 ```
 
+Select columns from "gd0_weight" to "gd_of birth".
 ```{r}
 select(litters_df, group, gd0_weight:gd_of_birth)
 ```
 
+Ignore column "litter_number".
 ```{r}
 select(litters_df, -litter_number)
 ```
@@ -40,7 +42,7 @@ select(litters_df, GROUP = group, LITTer_NUmBer = litter_number)
 rename(litters_df, GROUP = group, LITTER_NUmBer = litter_number)
 ```
 
-Select helpers
+Select helpers ("?select_helpers")
 
 ```{r}
 select(litters_df, starts_with("gd"))
@@ -49,10 +51,55 @@ select(litters_df, starts_with("gd"))
 ```{r}
 select(litters_df, litter_number, everything())
 ```
-
+or
 ```{r}
 relocate(litters_df, litter_number)
 ```
+
+## 'filter'
+
+```{r}
+filter(litters_df, gd0_weight < 22)
+```
+
+```{r}
+filter(litters_df, gd0_weight >= 22)
+```
+
+Double equal to compare values.
+```{r}
+filter(litters_df, gd_of_birth == 20)
+```
+
+```{r}
+filter(litters_df, !(gd_of_birth == 20))
+```
+or
+```{r}
+filter(litters_df, gd_of_birth != 20)
+```
+
+```{r}
+filter(litters_df, gd0_weight >= 22, gd_of_birth == 20)
+```
+
+```{r}
+filter(litters_df, group == "Con7")
+```
+
+```{r}
+filter(litters_df, group == "Mod8")
+```
+
+Either "Con7" or "Mod8".
+```{r}
+filter(litters_df, group %in% c("Con7", "Mod8"))
+```
+
+
+
+
+
 
 
 
